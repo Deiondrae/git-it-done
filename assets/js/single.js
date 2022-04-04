@@ -25,11 +25,11 @@ var getRepoIssues = function(repo) {
             response.json().then(function(data){
                 // pass response data to dom function
                 displayIssues(data);
-            });
-        } 
-        //check if api has paginated issues
-        if (response.headers.get("Link")){ 
-            displayWarning(repo)    
+            }); 
+            //check if api has paginated issues
+            if (response.headers.get("Link")){ 
+                displayWarning(repo)    
+            }
         } else {
             document.location.replace("./index.html");
         }
